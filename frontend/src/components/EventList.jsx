@@ -1,3 +1,4 @@
+//EventsList
 export default function EventList({ events, onSelect }) {
   if (events.length === 0) {
     return (
