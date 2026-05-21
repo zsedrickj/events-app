@@ -1,12 +1,4 @@
-import { deleteEvent } from "../api/eventsApi";
-
-export default function EventList({ events, onSelect, onDeleted }) {
-  const handleDelete = async (id) => {
-    if (!confirm("Delete this event?")) return;
-    await deleteEvent(id);
-    onDeleted();
-  };
-
+export default function EventList({ events, onSelect }) {
   if (events.length === 0) {
     return (
       <div className="bg-white rounded-2xl shadow p-6 text-center text-gray-400 text-sm">
@@ -42,12 +34,6 @@ export default function EventList({ events, onSelect, onDeleted }) {
                   className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded hover:bg-blue-200"
                 >
                   View
-                </button>
-                <button
-                  onClick={() => handleDelete(event.id)}
-                  className="text-xs bg-red-100 text-red-600 px-2 py-1 rounded hover:bg-red-200"
-                >
-                  Delete
                 </button>
               </div>
             </div>
