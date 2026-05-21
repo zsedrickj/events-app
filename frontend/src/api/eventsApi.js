@@ -12,7 +12,3 @@ export const createEvent = async (eventData) => {
   return response.data;
 };
 
-export const deleteEvent = async (id) => {
-  const response = await axios.delete(`${BASE_URL}/api/events/${id}`);
-  return response.data;
-};
